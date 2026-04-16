@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 30px auto; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .header { background-color: #6e1a1a; padding: 30px; text-align: center; }
+        .header h1 { color: #ffffff; margin: 0; font-size: 22px; }
+        .body { padding: 30px; color: #333333; }
+        .body h2 { color: #6e1a1a; }
+        .info-box { background-color: #fff0f0; border-left: 4px solid #6e1a1a; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .info-row { display: flex; justify-content: space-between; margin: 8px 0; }
+        .label { font-weight: bold; color: #555; }
+        .value { color: #6e1a1a; font-weight: bold; }
+        .footer { background-color: #f4f4f4; padding: 20px; text-align: center; font-size: 12px; color: #999; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>Solicitud No Aprobada</h1>
+    </div>
+    <div class="body">
+        <h2>Estimado/a, <span th:text="${nombreUsuario}">Cliente</span></h2>
+        <p>Lamentamos informarte que tu solicitud de crédito hipotecario no ha podido ser aprobada en esta oportunidad.</p>
+        <div class="info-box">
+            <div class="info-row">
+                <span class="label">N° Solicitud:</span>
+                <span class="value" th:text="${solicitudId}">#1</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Propiedad:</span>
+                <span class="value" th:text="${tituloPropiedad}">Propiedad</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Motivo:</span>
+                <span class="value" th:text="${observaciones}">Sin observaciones</span>
+            </div>
+        </div>
+        <p>Puedes volver a postular en 6 meses. Si tienes dudas, comunícate con nosotros.</p>
+    </div>
+    <div class="footer">
+        <p>Este es un correo automático, por favor no respondas a este mensaje.</p>
+    </div>
+</div>
+</body>
+</html>

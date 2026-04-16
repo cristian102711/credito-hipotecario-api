@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 30px auto; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .header { background-color: #1a6e3c; padding: 30px; text-align: center; }
+        .header h1 { color: #ffffff; margin: 0; font-size: 22px; }
+        .body { padding: 30px; color: #333333; }
+        .body h2 { color: #1a6e3c; }
+        .info-box { background-color: #f0fff4; border-left: 4px solid #1a6e3c; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .info-row { display: flex; justify-content: space-between; margin: 8px 0; }
+        .label { font-weight: bold; color: #555; }
+        .value { color: #1a6e3c; font-weight: bold; }
+        .footer { background-color: #f4f4f4; padding: 20px; text-align: center; font-size: 12px; color: #999; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>¡Solicitud Aprobada!</h1>
+    </div>
+    <div class="body">
+        <h2>Felicitaciones, <span th:text="${nombreUsuario}">Cliente</span></h2>
+        <p>Tu solicitud de crédito hipotecario ha sido <strong>aprobada</strong>. Un ejecutivo se pondrá en contacto contigo para coordinar los próximos pasos.</p>
+        <div class="info-box">
+            <div class="info-row">
+                <span class="label">N° Solicitud:</span>
+                <span class="value" th:text="${solicitudId}">#1</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Propiedad:</span>
+                <span class="value" th:text="${tituloPropiedad}">Propiedad</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Monto Aprobado:</span>
+                <span class="value" th:text="${montoSolicitado}">$0</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Dividendo Mensual:</span>
+                <span class="value" th:text="${dividendoMensual}">$0</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Tasa de Interés:</span>
+                <span class="value" th:text="${tasaInteres} + '%'"">4.89%</span>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Este es un correo automático, por favor no respondas a este mensaje.</p>
+    </div>
+</div>
+</body>
+</html>

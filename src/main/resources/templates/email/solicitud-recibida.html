@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 30px auto; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .header { background-color: #1a3c6e; padding: 30px; text-align: center; }
+        .header h1 { color: #ffffff; margin: 0; font-size: 22px; }
+        .body { padding: 30px; color: #333333; }
+        .body h2 { color: #1a3c6e; }
+        .info-box { background-color: #f0f4ff; border-left: 4px solid #1a3c6e; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .info-row { display: flex; justify-content: space-between; margin: 8px 0; }
+        .label { font-weight: bold; color: #555; }
+        .value { color: #1a3c6e; font-weight: bold; }
+        .footer { background-color: #f4f4f4; padding: 20px; text-align: center; font-size: 12px; color: #999; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>Crédito Hipotecario — Solicitud Recibida</h1>
+    </div>
+    <div class="body">
+        <h2>Hola, <span th:text="${nombreUsuario}">Cliente</span></h2>
+        <p>Tu solicitud de crédito hipotecario ha sido recibida exitosamente. Un ejecutivo la revisará en las próximas 48 horas hábiles.</p>
+        <div class="info-box">
+            <div class="info-row">
+                <span class="label">N° Solicitud:</span>
+                <span class="value" th:text="${solicitudId}">#1</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Propiedad:</span>
+                <span class="value" th:text="${tituloPropiedad}">Propiedad</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Monto Solicitado:</span>
+                <span class="value" th:text="${montoSolicitado}">$0</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Plazo:</span>
+                <span class="value" th:text="${plazoAnos} + ' años'"">20 años</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Dividendo Estimado:</span>
+                <span class="value" th:text="${dividendoMensual}">$0</span>
+            </div>
+        </div>
+        <p>Te notificaremos por este medio cada vez que el estado de tu solicitud cambie.</p>
+    </div>
+    <div class="footer">
+        <p>Este es un correo automático, por favor no respondas a este mensaje.</p>
+    </div>
+</div>
+</body>
+</html>
