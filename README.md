@@ -16,7 +16,7 @@ API REST para gestión de propiedades y solicitudes de crédito hipotecario, des
 
 ## Módulos
 
-### utenticación
+### Autenticación
 - Registro y login con JWT
 - Refresh tokens
 - Roles: `ADMIN`, `EJECUTIVO`, `CLIENTE`
@@ -116,8 +116,8 @@ Para autenticarte en Swagger:
 | Método | Endpoint | Descripción |
 |--------|----------|-------------|
 | GET | `/api/dashboard/estadisticas` | Estadísticas generales |
-| GET | `/api/exportar/solicitudes/pdf` | Exportar PDF |
-| GET | `/api/exportar/solicitudes/excel` | Exportar Excel |
+| GET | `/api/export/pdf` | Exportar PDF |
+| GET | `/api/export/excel` | Exportar Excel |
 
 ## Tests
 
@@ -125,7 +125,7 @@ Para autenticarte en Swagger:
 mvn test
 ```
 
-7 tests unitarios cubriendo servicios de autenticación y propiedades.
+7 tests unitarios cubriendo AuthService (register, email duplicado) y SolicitudCreditoService (cálculo CAE, dividendo, validaciones de estado).
 
 ##  Monitoreo
 

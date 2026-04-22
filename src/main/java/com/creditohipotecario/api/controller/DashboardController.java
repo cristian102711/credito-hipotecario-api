@@ -1,5 +1,7 @@
 package com.creditohipotecario.api.controller;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import com.creditohipotecario.api.dto.DashboardResponse;
 import com.creditohipotecario.api.model.EstadoSolicitud;
 import com.creditohipotecario.api.repository.SolicitudCreditoRepository;
@@ -10,6 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@Tag(name = "Dashboard", description = "Estadísticas y métricas del sistema")
+@SecurityRequirement(name = "Bearer Authentication")
 @RestController
 @RequestMapping("/api/dashboard")
 @RequiredArgsConstructor

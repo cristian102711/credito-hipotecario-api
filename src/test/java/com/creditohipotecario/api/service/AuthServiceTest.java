@@ -1,4 +1,4 @@
-package com.creditohipotecario.api;
+package com.creditohipotecario.api.service;
 
 import com.creditohipotecario.api.dto.RegisterRequest;
 import com.creditohipotecario.api.model.Rol;

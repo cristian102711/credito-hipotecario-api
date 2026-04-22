@@ -1,5 +1,7 @@
 package com.creditohipotecario.api.controller;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import com.creditohipotecario.api.model.EstadoSolicitud;
 import com.creditohipotecario.api.service.ExportService;
 import lombok.RequiredArgsConstructor;
@@ -10,7 +12,8 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-
+@Tag(name = "Exportación", description = "Exportación de reportes en PDF y Excel")
+@SecurityRequirement(name = "Bearer Authentication")
 @RestController
 @RequestMapping("/api/export")
 @RequiredArgsConstructor

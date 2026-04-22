@@ -1,5 +1,7 @@
 package com.creditohipotecario.api.controller;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import com.creditohipotecario.api.dto.PropiedadRequest;
 import com.creditohipotecario.api.dto.PropiedadResponse;
 import com.creditohipotecario.api.model.EstadoPropiedad;
@@ -16,7 +18,8 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
-
+@Tag(name = "Propiedades", description = "Gestión de propiedades inmobiliarias")
+@SecurityRequirement(name = "Bearer Authentication")
 @RestController
 @RequestMapping("/api/propiedades")
 @RequiredArgsConstructor

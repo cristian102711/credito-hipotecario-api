@@ -1,5 +1,7 @@
 package com.creditohipotecario.api.controller;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import com.creditohipotecario.api.dto.SolicitudCreditoRequest;
 import com.creditohipotecario.api.dto.SolicitudCreditoResponse;
 import com.creditohipotecario.api.model.EstadoSolicitud;
@@ -14,6 +16,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+@Tag(name = "Solicitudes de Crédito", description = "Gestión del flujo de solicitudes hipotecarias")
+@SecurityRequirement(name = "Bearer Authentication")
 @RestController
 @RequestMapping("/api/solicitudes")
 @RequiredArgsConstructor
